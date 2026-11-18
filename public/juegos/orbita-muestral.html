@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Atrapa resultados y construye espacios muestrales y eventos.">
+  <title>Órbita muestral · Juegos ProfeClau</title>
+  <link rel="stylesheet" href="/juegos/orbita.css">
+  <script src="/juegos/orbita.js" defer></script>
+</head>
+<body>
+<main>
+  <a class="back" href="/juegos">← Juegos de Matemática</a>
+  <header>
+    <h1>Órbita muestral</h1>
+    <p id="progress"></p>
+  </header>
+  <nav class="stages" aria-label="Etapas del juego">
+    <span id="stage-one">1 · Espacios muestrales</span>
+    <span id="stage-two">2 · Eventos</span>
+  </nav>
+  <section class="panel" aria-labelledby="question">
+    <h2 id="question" tabindex="-1"></h2>
+    <p id="help"></p>
+  </section>
+  <section class="panel sets" id="sets" aria-label="Conjuntos">
+    <div class="set-row" id="omega-row">
+      <span class="set-label">Espacio muestral</span>
+      <span class="formula">Ω = {<span class="items" id="omega"></span>}</span>
+    </div>
+    <div class="set-row active" id="event-row" hidden>
+      <span class="set-label">Evento</span>
+      <span class="formula"><span id="event-symbol">A</span> = {<span class="items" id="event-items"></span>}</span>
+    </div>
+  </section>
+  <div id="field" role="group" aria-label="Resultados para atrapar"></div>
+  <p id="feedback" role="status"></p>
+  <div class="actions">
+    <button id="next" type="button" hidden></button>
+    <button id="motion" type="button" hidden>Pausar movimiento</button>
+    <button id="reset" type="button">Reiniciar juego</button>
+  </div>
+  <noscript>Activa JavaScript en tu navegador para jugar.</noscript>
+</main>
+</body>
+</html>
