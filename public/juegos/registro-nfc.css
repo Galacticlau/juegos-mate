@@ -1,0 +1,177 @@
+
+    :root {
+      --fondo: #eef4f8;
+      --tarjeta: #ffffff;
+      --texto: #17324d;
+      --muted: #60758a;
+      --primario: #1f6f8b;
+      --primario-oscuro: #164f64;
+      --exito: #207a4d;
+      --error: #b33a3a;
+      --aviso: #a16600;
+      --borde: #d5e1ea;
+      --sombra: 0 18px 45px rgba(20, 50, 75, .13);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(160deg, #e9f3f8 0%, #f7fafc 70%);
+      color: var(--texto);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .contenedor {
+      width: min(720px, calc(100% - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+
+    .marca {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .marca h1 {
+      margin: 0;
+      font-size: clamp(1.45rem, 5vw, 2rem);
+    }
+
+    .sello {
+      padding: 7px 11px;
+      border: 1px solid var(--borde);
+      border-radius: 999px;
+      background: rgba(255,255,255,.7);
+      color: var(--muted);
+      font-size: .82rem;
+      font-weight: 700;
+    }
+
+    .panel {
+      background: var(--tarjeta);
+      border: 1px solid rgba(213, 225, 234, .9);
+      border-radius: 22px;
+      box-shadow: var(--sombra);
+      padding: clamp(20px, 5vw, 34px);
+    }
+
+    h2 { margin: 0 0 8px; }
+    p { line-height: 1.55; }
+    .muted { color: var(--muted); }
+
+    label {
+      display: block;
+      margin: 18px 0 7px;
+      font-weight: 750;
+    }
+
+    input {
+      width: 100%;
+      min-height: 50px;
+      padding: 12px 14px;
+      border: 1px solid var(--borde);
+      border-radius: 13px;
+      background: #fbfdff;
+      color: var(--texto);
+      font-size: 1rem;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: var(--primario);
+      box-shadow: 0 0 0 3px rgba(31, 111, 139, .13);
+    }
+
+    button {
+      width: 100%;
+      min-height: 50px;
+      margin-top: 16px;
+      border: 0;
+      border-radius: 13px;
+      background: var(--primario);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    button:hover { background: var(--primario-oscuro); }
+    button:disabled { opacity: .58; cursor: wait; }
+
+    .secundario {
+      background: #e7f0f5;
+      color: var(--texto);
+    }
+
+    .estado {
+      display: none;
+      margin-top: 18px;
+      padding: 15px 16px;
+      border-radius: 14px;
+      line-height: 1.45;
+      white-space: pre-line;
+    }
+
+    .estado.visible { display: block; }
+    .estado.exito { background: #e8f5ee; color: var(--exito); }
+    .estado.error { background: #fdecec; color: var(--error); }
+    .estado.aviso { background: #fff5dc; color: var(--aviso); }
+    .estado.info { background: #eaf4fa; color: var(--primario-oscuro); }
+
+    .resumen {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .dato {
+      padding: 18px;
+      border: 1px solid var(--borde);
+      border-radius: 16px;
+      background: #f8fbfd;
+    }
+
+    .dato strong {
+      display: block;
+      font-size: 1.65rem;
+      margin-top: 5px;
+    }
+
+    .registro {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px 14px;
+      padding: 15px 0;
+      border-top: 1px solid var(--borde);
+    }
+
+    .registro:first-child { border-top: 0; }
+    .registro .fecha { color: var(--muted); font-size: .9rem; }
+    .puntos { font-weight: 850; color: var(--exito); }
+
+    .lector {
+      margin-top: 22px;
+      padding: 22px;
+      border: 2px dashed var(--borde);
+      border-radius: 18px;
+      text-align: center;
+      background: #f8fbfd;
+    }
+
+    .icono-nfc { font-size: 3rem; }
+    .oculto { display: none !important; }
+
+    @media (max-width: 520px) {
+      .resumen { grid-template-columns: 1fr; }
+      .marca { align-items: flex-start; }
+    }
+  
+.volver { color: var(--primario); }
+.accesos { display: grid; gap: 12px; }
+.enlace { display: block; padding: 13px; border-radius: 13px; background: var(--primario); color: white; text-align: center; text-decoration: none; font-weight: 750; }
