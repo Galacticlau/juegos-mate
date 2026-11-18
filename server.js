@@ -14,6 +14,14 @@ const routes = new Map([
   ['/tarjetas-nfc/registro.css', ['registro-nfc.css', 'text/css']],
   ['/tarjetas-nfc/registro.js', ['registro-nfc.js', 'text/javascript']]
 ]);
+for (const [path, file, type] of [
+  ['/juegos/crucigrama', 'index.html', 'text/html'],
+  ['/juegos/crucigrama/', 'index.html', 'text/html'],
+  ['/juegos/crucigrama/style.css', 'style.css', 'text/css'],
+  ['/juegos/crucigrama/data.js', 'data.js', 'text/javascript'],
+  ['/juegos/crucigrama/crossword.js', 'crossword.js', 'text/javascript'],
+  ['/juegos/crucigrama/app.js', 'app.js', 'text/javascript']
+]) routes.set(path, ['crucigrama/' + file, type]);
 const assets = new Map(await Promise.all([...routes].map(async ([path, [file, type]]) => [
   path, { type, bytes: await readFile(new URL('./public/juegos/' + file, import.meta.url)) }
 ])));
@@ -23,7 +31,10 @@ createServer((req, res) => {
   res.setHeader('X-Content-Type-Options', 'nosniff');
   res.setHeader('Referrer-Policy', 'no-referrer');
   const nfcPage = path === '/tarjetas-nfc' || path === '/tarjetas-nfc/';
-  const policy = nfcPage
+  const crucigrama = path.startsWith("/juegos/crucigrama");
+  const policy = crucigrama
+    ? "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+    : nfcPage
     ? "default-src 'self'; script-src 'self' https://script.google.com https://script.googleusercontent.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
     : "default-src 'self'; style-src 'self'; img-src 'self' data:; frame-ancestors 'none'; base-uri 'none'; form-action 'self'";
   res.setHeader('Content-Security-Policy', policy);
