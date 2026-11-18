@@ -8,7 +8,11 @@ const routes = new Map([
   ['/juegos/orbita-muestral', ['orbita-muestral.html', 'text/html']],
   ['/juegos/orbita-muestral/', ['orbita-muestral.html', 'text/html']],
   ['/juegos/orbita.css', ['orbita.css', 'text/css']],
-  ['/juegos/orbita.js', ['orbita.js', 'text/javascript']]
+  ['/juegos/orbita.js', ['orbita.js', 'text/javascript']],
+  ['/tarjetas-nfc', ['registro-nfc.html', 'text/html']],
+  ['/tarjetas-nfc/', ['registro-nfc.html', 'text/html']],
+  ['/tarjetas-nfc/registro.css', ['registro-nfc.css', 'text/css']],
+  ['/tarjetas-nfc/registro.js', ['registro-nfc.js', 'text/javascript']]
 ]);
 const assets = new Map(await Promise.all([...routes].map(async ([path, [file, type]]) => [
   path, { type, bytes: await readFile(new URL('./public/juegos/' + file, import.meta.url)) }
@@ -18,7 +22,11 @@ createServer((req, res) => {
   const path = new URL(req.url, 'http://localhost').pathname;
   res.setHeader('X-Content-Type-Options', 'nosniff');
   res.setHeader('Referrer-Policy', 'no-referrer');
-  res.setHeader('Content-Security-Policy', "default-src 'self'; style-src 'self'; img-src 'self' data:; frame-ancestors 'none'; base-uri 'none'; form-action 'self'");
+  const nfcPage = path === '/tarjetas-nfc' || path === '/tarjetas-nfc/';
+  const policy = nfcPage
+    ? "default-src 'self'; script-src 'self' https://script.google.com https://script.googleusercontent.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+    : "default-src 'self'; style-src 'self'; img-src 'self' data:; frame-ancestors 'none'; base-uri 'none'; form-action 'self'";
+  res.setHeader('Content-Security-Policy', policy);
   if (!['GET', 'HEAD'].includes(req.method)) {
     res.writeHead(405, { Allow: 'GET, HEAD' }).end();
     return;
