@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#16324f">
+  <title>Registro NFC · Profe Clau</title>
+  <link rel="stylesheet" href="/tarjetas-nfc/registro.css">
+</head>
+<body>
+  <main class="contenedor">
+    <a class="volver" href="/">← Volver a ProfeClau</a>
+    <header class="marca">
+      <h1>Registro NFC</h1>
+      <span class="sello">Profe Clau</span>
+    </header>
+
+    <section id="inicio" class="panel oculto">
+      <h2>Tarjetas y puntajes</h2>
+      <p class="muted">Acerca tu tarjeta NFC al teléfono para abrir tu enlace personal y consultar tus registros con tu PIN. También puedes ingresar el token de tu tarjeta.</p>
+      <form id="accesoTarjeta">
+        <label for="tokenAcceso">Token de tu tarjeta</label>
+        <input id="tokenAcceso" type="text" autocomplete="off" required>
+        <button type="submit">Acceder como estudiante</button>
+      </form>
+      <p><a class="enlace" href="/tarjetas-nfc?modo=docente">Acceder al panel docente</a></p>
+    </section>
+
+    <section id="alumno" class="panel oculto">
+      <h2>Mis registros y puntaje</h2>
+      <p class="muted">Ingresa tu PIN para consultar únicamente tus propios datos.</p>
+
+      <label for="pinAlumno">PIN de 4 dígitos</label>
+      <input id="pinAlumno" type="password" inputmode="numeric" autocomplete="one-time-code" maxlength="8" placeholder="••••">
+      <button id="btnConsultar">Ver mis registros</button>
+
+      <div id="estadoAlumno" class="estado"></div>
+
+      <div id="datosAlumno" class="oculto">
+        <h2 id="nombreAlumno" style="margin-top: 26px"></h2>
+        <p id="cursoAlumno" class="muted"></p>
+
+        <div class="resumen">
+          <div class="dato">
+            Puntaje total
+            <strong id="puntajeTotal">0</strong>
+          </div>
+          <div class="dato">
+            Registros
+            <strong id="cantidadRegistros">0</strong>
+          </div>
+        </div>
+
+        <h3>Historial</h3>
+        <div id="listaRegistros"></div>
+      </div>
+    </section>
+
+    <section id="docente" class="panel oculto">
+      <h2>Panel docente</h2>
+      <p class="muted">Activa el lector una vez y luego acerca las tarjetas al teléfono.</p>
+
+      <label for="claveDocente">Clave docente</label>
+      <input id="claveDocente" type="password" autocomplete="current-password" placeholder="Clave del panel">
+      <button id="btnActivarNfc">Activar lector NFC</button>
+
+      <div class="lector">
+        <div class="icono-nfc">◉</div>
+        <strong id="textoLector">Lector detenido</strong>
+        <p class="muted" id="detalleLector">Presiona “Activar lector NFC”.</p>
+      </div>
+
+      <div id="estadoDocente" class="estado"></div>
+
+      <label for="tokenManual">Registro manual de respaldo</label>
+      <input id="tokenManual" type="text" autocomplete="off" placeholder="Pega un token">
+      <button id="btnRegistroManual" class="secundario">Registrar token manualmente</button>
+    </section>
+  </main>
+
+  <script src="/tarjetas-nfc/registro.js" defer></script>
+</body>
+</html>
