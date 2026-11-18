@@ -5,6 +5,10 @@ const routes = new Map([
   ['/', ['index.html', 'text/html']],
   ['/juegos', ['index.html', 'text/html']],
   ['/juegos/', ['index.html', 'text/html']],
+  ['/opcion-1', ['opcion-1.html', 'text/html']],
+  ['/opcion-1/', ['opcion-1.html', 'text/html']],
+  ['/opcion-2', ['index.html', 'text/html']],
+  ['/opcion-2/', ['index.html', 'text/html']],
   ['/juegos/orbita-muestral', ['orbita-muestral.html', 'text/html']],
   ['/juegos/orbita-muestral/', ['orbita-muestral.html', 'text/html']],
   ['/juegos/orbita.css', ['orbita.css', 'text/css']],
@@ -19,6 +23,9 @@ for (const [file, type] of [
   ['brand.js', 'text/javascript'],
   ['catalog.css', 'text/css'],
   ['catalog.js', 'text/javascript'],
+  ['notebook.css', 'text/css'],
+  ['notebook.js', 'text/javascript'],
+  ['design-preview.js', 'text/javascript'],
   ['profeclau-logo.png', 'image/png']
 ]) routes.set('/assets/' + file, ['../assets/' + file, type]);
 for (const [path, file, type] of [
