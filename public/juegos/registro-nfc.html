@@ -3,16 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#16324f">
+
   <title>Registro NFC · Profe Clau</title>
   <link rel="stylesheet" href="/tarjetas-nfc/registro.css">
+  <meta name="theme-color" content="#f8f5ff">
+  <link rel="icon" type="image/png" href="/assets/profeclau-logo.png">
+  <link rel="stylesheet" href="/assets/brand.css">
+  <script src="/assets/brand.js" defer></script>
 </head>
-<body>
-  <main class="contenedor">
-    <a class="volver" href="/">← Volver a ProfeClau</a>
+<body class="pc-page pc-nfc-page">
+  <a class="pc-skip" href="#contenido">Saltar al contenido</a>
+  <header class="pc-header pc-wrap">
+    <a class="pc-brand" href="/" aria-label="ProfeClau, inicio">
+      <span class="pc-logo-box"><img src="/assets/profeclau-logo.png" width="72" height="72" alt="Logo de ProfeClau"></span>
+      <span class="pc-brand-copy"><strong>Profe<span>Clau</span></strong><small>Un lugar para aprender jugando.</small></span>
+    </a>
+    <nav class="pc-nav" aria-label="Navegación principal">
+      <a href="/#juegos">Explorar juegos</a>
+      <a class="pc-nav-tool" href="/tarjetas-nfc" aria-current="page">Tarjetas y puntajes</a>
+      <button class="pc-theme" type="button" aria-label="Activar tema oscuro" title="Activar tema oscuro">☾</button>
+    </nav>
+  </header>
+
+  <main class="contenedor" id="contenido">
+    <a class="pc-breadcrumb" href="/#juegos">← Todos los recursos <span aria-hidden="true">/</span> Tarjetas y puntajes</a>
     <header class="marca">
-      <h1>Registro NFC</h1>
-      <span class="sello">Profe Clau</span>
+      <div><span class="pc-kicker">CADA AVANCE CUENTA</span><h1>Registro NFC</h1></div>
+      <span class="sello">Mis logros ＋</span>
     </header>
 
     <section id="inicio" class="panel oculto">
@@ -79,5 +96,7 @@
   </main>
 
   <script src="/tarjetas-nfc/registro.js" defer></script>
+
+  <footer class="pc-footer pc-wrap"><span><strong>ProfeClau</strong> · Ideas que suman, juegos que enseñan.</span><a href="/#juegos">Explorar otro desafío →</a></footer>
 </body>
 </html>

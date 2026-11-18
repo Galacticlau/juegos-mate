@@ -7,28 +7,35 @@
   <meta name="description" content="Crea y resuelve crucigramas directamente en el navegador.">
   <title>CruciLab · Creador de crucigramas</title>
   <link rel="stylesheet" href="style.css">
+  <meta name="theme-color" content="#f8f5ff">
+  <link rel="icon" type="image/png" href="/assets/profeclau-logo.png">
+  <link rel="stylesheet" href="/assets/brand.css">
+  <script src="/assets/brand.js" defer></script>
 </head>
-<body>
+<body class="pc-page pc-cruci-page">
+  <a class="pc-skip" href="#contenido">Saltar al contenido</a>
+  <header class="pc-header pc-wrap">
+    <a class="pc-brand" href="/" aria-label="ProfeClau, inicio">
+      <span class="pc-logo-box"><img src="/assets/profeclau-logo.png" width="72" height="72" alt="Logo de ProfeClau"></span>
+      <span class="pc-brand-copy"><strong>Profe<span>Clau</span></strong><small>Un lugar para aprender jugando.</small></span>
+    </a>
+    <nav class="pc-nav" aria-label="Navegación principal">
+      <a href="/#juegos">Explorar juegos</a>
+      <a class="pc-nav-tool" href="/tarjetas-nfc">Tarjetas y puntajes</a>
+      <button class="pc-theme" type="button" aria-label="Activar tema oscuro" title="Activar tema oscuro">☾</button>
+    </nav>
+  </header>
+
   <div class="orb orb--one"></div>
   <div class="orb orb--two"></div>
 
-  <header class="topbar container">
-    <a class="brand" href="#">
-      <span class="brand__mark">#</span>
-      <span>CruciLab</span>
-    </a>
-    <div class="topbar__actions">
-      <a href="/juegos" style="color:inherit">← ProfeClau</a>
-      <button id="themeBtn" class="icon-btn" title="Cambiar tema" aria-label="Cambiar tema">☀️</button>
-    </div>
-  </header>
-
-  <main class="container">
+  <main class="container" id="contenido">
+    <a class="pc-breadcrumb" href="/#juegos">← Todos los juegos <span aria-hidden="true">/</span> CruciLab</a>
     <section class="hero">
       <div>
         <span class="kicker">CREA · CRUZA · RESUELVE</span>
         <h1>Construye crucigramas<br><em>en segundos.</em></h1>
-        <p>Escribe tus conceptos y pistas, o parte desde uno de los tres ejemplos preparados. Todo funciona en tu navegador: sin cuentas, sin API y sin IA.</p>
+        <p>Escribe tus conceptos y pistas, o parte desde uno de los tres ejemplos preparados. Juega en tu navegador y comparte tus ideas, pista a pista.</p>
       </div>
       <div class="hero__badge">
         <strong>100%</strong>
@@ -159,11 +166,6 @@
     </section>
   </main>
 
-  <footer class="footer container">
-    <span>CruciLab</span>
-    <p>Generador local de crucigramas · Tus datos no salen del navegador.</p>
-  </footer>
-
   <div id="celebration" class="celebration" aria-hidden="true">
     <div class="celebration__card">
       <div class="celebration__icon">★</div>
@@ -177,5 +179,7 @@
   <script src="data.js"></script>
   <script src="crossword.js"></script>
   <script src="app.js"></script>
+
+  <footer class="pc-footer pc-wrap"><span><strong>ProfeClau</strong> · Ideas que suman, juegos que enseñan.</span><a href="/#juegos">Explorar otro desafío →</a></footer>
 </body>
 </html>

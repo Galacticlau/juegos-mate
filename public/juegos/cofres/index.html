@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#f8f5ff" />
+<title>Los tres cofres del conteo | Competencia matemática</title>
+<link rel="stylesheet" href="/juegos/cofres/style.css">
+<link rel="stylesheet" href="/assets/brand.css">
+<link rel="icon" type="image/png" href="/assets/profeclau-logo.png">
+<script src="/assets/brand.js" defer></script>
+</head>
+<body class="pc-page pc-cofres-page">
+  <a class="pc-skip" href="#contenido">Saltar al contenido</a>
+  <header class="pc-header pc-wrap">
+    <a class="pc-brand" href="/" aria-label="ProfeClau, inicio">
+      <span class="pc-logo-box"><img src="/assets/profeclau-logo.png" width="72" height="72" alt="Logo de ProfeClau"></span>
+      <span class="pc-brand-copy"><strong>Profe<span>Clau</span></strong><small>Un lugar para aprender jugando.</small></span>
+    </a>
+    <nav class="pc-nav" aria-label="Navegación principal">
+      <a href="/#juegos">Explorar juegos</a>
+      <a class="pc-nav-tool" href="/tarjetas-nfc">Tarjetas y puntajes</a>
+      <button class="pc-theme" type="button" aria-label="Activar tema oscuro" title="Activar tema oscuro">☾</button>
+    </nav>
+  </header>
+<div class="wrap">
+<header class="top"><div class="brand"><div class="brandIcon" aria-hidden="true">🧮</div><div><div class="eyebrow">Desafío matemático · Modo equipos</div><h1>Los tres cofres del conteo</h1></div></div><button class="textBtn" id="fullscreen" type="button" title="Mostrar en pantalla completa">Pantalla completa</button></header>
+<main id="contenido">
+<section id="startScreen">
+<div class="introGrid">
+<div class="card"><div class="eyebrow">Objetivo de la misión</div><h2>Descifren qué se está contando</h2><p class="help">Tres cofres, tres tipos de desafíos y un equipo ganador. Identifiquen cuándo <strong>importa el orden</strong>, concluyan los cálculos y expliquen por qué hay que <strong>corregir los conteos repetidos</strong>.</p><div class="chips"><span class="chip">🧩 Permutación</span><span class="chip">🎯 Variación</span><span class="chip">🔎 Combinación</span></div><div class="aboutHint"><strong>Reglas:</strong> cada equipo responde una pregunta por cofre. Respuesta correcta: +100 puntos. El docente puede otorgar +50 adicionales si el equipo explica su razonamiento. Se juegan los tres cofres completos.</div></div>
+<div class="card"><h2>Preparar la competencia</h2><div class="formCols"><label class="field">Cantidad de equipos<select id="teamCount"><option value="2">2 equipos</option><option value="3">3 equipos</option><option value="4" selected>4 equipos</option><option value="5">5 equipos</option><option value="6">6 equipos</option></select></label><div><div class="field" style="margin-bottom:10px">Nombres de los equipos</div><div id="names" class="names"></div></div></div><label class="setting" style="margin-top:18px"><input id="useTimer" type="checkbox" checked /> Usar cronómetro de 45 segundos por turno</label><div class="actions"><button id="start" class="button" type="button">🔑 Comenzar juego</button></div></div>
+</div>
+<div class="chests" id="startChests"><div class="chest"><span class="chestIcon">🗝️</span><div class="chestTitle">Cofre 1 · Reconoce</div><div class="chestSmall">¿Qué técnica corresponde?</div></div><div class="chest"><span class="chestIcon">🔢</span><div class="chestTitle">Cofre 2 · Calcula</div><div class="chestSmall">Cuenta sin repetir ni omitir</div></div><div class="chest"><span class="chestIcon">💎</span><div class="chestTitle">Cofre 3 · Justifica</div><div class="chestSmall">Explica el sobreconteo</div></div></div>
+</section>
+<section id="gameScreen" class="hidden"><div id="chestBar" class="chests" aria-label="Progreso de los cofres"></div><div class="gameGrid"><article class="card gamePanel"><div class="gameHeader"><span class="tag" id="phaseTag"></span><span class="tag" id="turnTag"></span><div id="timer" class="timer" aria-label="Segundos restantes">45 s</div></div><div class="turnLabel">Turno del equipo</div><div class="turnName" id="activeTeam"></div><div id="question" class="question"></div><div id="answers" class="answers"></div><div id="feedback" class="feedback hidden" role="status" aria-live="polite"></div><div class="gameControl"><button type="button" id="bonus" class="button bonus hidden">⭐ +50 por justificar</button><button type="button" id="next" class="button hidden">Siguiente equipo →</button></div></article><aside class="card scoreboard"><h2>🏆 Marcador</h2><p class="muted">Cada equipo juega una vez por cofre.</p><div id="scoreItems"></div><div class="progress"><div class="progressFill" id="progressFill"></div></div><p class="tiny" id="progressLabel"></p><button class="textBtn" id="restart" type="button" style="margin-top:16px">↺ Reiniciar partida</button></aside></div></section>
+<section id="resultScreen" class="hidden card center"><div class="resultIcon">🏆</div><div class="eyebrow">Misión completada</div><h2 class="resultTitle" id="winnerTitle"></h2><p class="resultText" id="winnerSub"></p><div class="ranking" id="ranking"></div><p class="resultText">Para ganar en conteo no basta con una fórmula: hay que justificar <strong>qué resultados son diferentes</strong> y <strong>cuándo se cuenta lo mismo varias veces</strong>.</p><div class="actions" style="justify-content:center"><button class="button" id="playAgain" type="button">↺ Jugar otra vez</button></div></section>
+</main><footer class="footer">Para jugar en equipo y compartir estrategias en una misma pantalla.</footer>
+</div>
+<script src="/juegos/cofres/app.js" defer></script>
+  <footer class="pc-footer pc-wrap"><span><strong>ProfeClau</strong> · Ideas que suman, juegos que enseñan.</span><a href="/#juegos">Explorar otro desafío →</a></footer>
+</body></html>

@@ -14,6 +14,13 @@ const routes = new Map([
   ['/tarjetas-nfc/registro.css', ['registro-nfc.css', 'text/css']],
   ['/tarjetas-nfc/registro.js', ['registro-nfc.js', 'text/javascript']]
 ]);
+for (const [file, type] of [
+  ['brand.css', 'text/css'],
+  ['brand.js', 'text/javascript'],
+  ['catalog.css', 'text/css'],
+  ['catalog.js', 'text/javascript'],
+  ['profeclau-logo.png', 'image/png']
+]) routes.set('/assets/' + file, ['../assets/' + file, type]);
 for (const [path, file, type] of [
   ['/juegos/crucigrama', 'index.html', 'text/html'],
   ['/juegos/crucigrama/', 'index.html', 'text/html'],
@@ -22,6 +29,12 @@ for (const [path, file, type] of [
   ['/juegos/crucigrama/crossword.js', 'crossword.js', 'text/javascript'],
   ['/juegos/crucigrama/app.js', 'app.js', 'text/javascript']
 ]) routes.set(path, ['crucigrama/' + file, type]);
+for (const [path, file, type] of [
+  ['/juegos/cofres-del-orden', 'index.html', 'text/html'],
+  ['/juegos/cofres-del-orden/', 'index.html', 'text/html'],
+  ['/juegos/cofres/style.css', 'style.css', 'text/css'],
+  ['/juegos/cofres/app.js', 'app.js', 'text/javascript']
+]) routes.set(path, ['cofres/' + file, type]);
 const assets = new Map(await Promise.all([...routes].map(async ([path, [file, type]]) => [
   path, { type, bytes: await readFile(new URL('./public/juegos/' + file, import.meta.url)) }
 ])));
@@ -31,7 +44,7 @@ createServer((req, res) => {
   res.setHeader('X-Content-Type-Options', 'nosniff');
   res.setHeader('Referrer-Policy', 'no-referrer');
   const nfcPage = path === '/tarjetas-nfc' || path === '/tarjetas-nfc/';
-  const crucigrama = path.startsWith("/juegos/crucigrama");
+  const crucigrama = path.startsWith('/juegos/crucigrama') || path.startsWith('/juegos/cofres');
   const policy = crucigrama
     ? "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
     : nfcPage
@@ -53,11 +66,11 @@ createServer((req, res) => {
     return;
   }
   res.writeHead(200, {
-    'Content-Type': asset.type + '; charset=utf-8',
+    'Content-Type': asset.type + (asset.type.startsWith('text/') ? '; charset=utf-8' : ''),
     'Content-Length': asset.bytes.length,
     'Cache-Control': 'no-cache'
   });
   res.end(req.method === 'HEAD' ? undefined : asset.bytes);
-}).listen(Number(process.env.PORT || 3000), '0.0.0.0', () => {
+}).listen(Number(process.env.PORT || (process.argv.includes('--port') ? process.argv[process.argv.indexOf('--port') + 1] : 3000)), '0.0.0.0', () => {
   console.log('Juegos de Matemática listo.');
 });

@@ -7,12 +7,29 @@
   <title>Órbita muestral · Juegos ProfeClau</title>
   <link rel="stylesheet" href="/juegos/orbita.css">
   <script src="/juegos/orbita.js" defer></script>
+  <meta name="theme-color" content="#f8f5ff">
+  <link rel="icon" type="image/png" href="/assets/profeclau-logo.png">
+  <link rel="stylesheet" href="/assets/brand.css">
+  <script src="/assets/brand.js" defer></script>
 </head>
-<body>
-<main>
-  <a class="back" href="/juegos">← Juegos de Matemática</a>
-  <header>
-    <h1>Órbita muestral</h1>
+<body class="pc-page pc-orbit-page">
+  <a class="pc-skip" href="#contenido">Saltar al contenido</a>
+  <header class="pc-header pc-wrap">
+    <a class="pc-brand" href="/" aria-label="ProfeClau, inicio">
+      <span class="pc-logo-box"><img src="/assets/profeclau-logo.png" width="72" height="72" alt="Logo de ProfeClau"></span>
+      <span class="pc-brand-copy"><strong>Profe<span>Clau</span></strong><small>Un lugar para aprender jugando.</small></span>
+    </a>
+    <nav class="pc-nav" aria-label="Navegación principal">
+      <a href="/#juegos">Explorar juegos</a>
+      <a class="pc-nav-tool" href="/tarjetas-nfc">Tarjetas y puntajes</a>
+      <button class="pc-theme" type="button" aria-label="Activar tema oscuro" title="Activar tema oscuro">☾</button>
+    </nav>
+  </header>
+
+<main class="pc-game-main" id="contenido">
+  <a class="pc-breadcrumb" href="/#juegos">← Todos los juegos <span aria-hidden="true">/</span> Probabilidad</a>
+  <header class="pc-orbit-heading">
+    <div><span class="pc-kicker">ATRAPA · PIENSA · DESCUBRE</span><h1>Órbita muestral</h1></div>
     <p id="progress"></p>
   </header>
   <nav class="stages" aria-label="Etapas del juego">
@@ -42,5 +59,7 @@
   </div>
   <noscript>Activa JavaScript en tu navegador para jugar.</noscript>
 </main>
+
+  <footer class="pc-footer pc-wrap"><span><strong>ProfeClau</strong> · Ideas que suman, juegos que enseñan.</span><a href="/#juegos">Explorar otro desafío →</a></footer>
 </body>
 </html>

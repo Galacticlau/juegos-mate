@@ -454,15 +454,4 @@ document.getElementById("closeCelebrationBtn").addEventListener("click", () => {
   celebration.setAttribute("aria-hidden","true");
 });
 
-document.getElementById("themeBtn").addEventListener("click", () => {
-  document.body.classList.toggle("light");
-  const light = document.body.classList.contains("light");
-  document.getElementById("themeBtn").textContent = light ? "🌙" : "☀️";
-  localStorage.setItem("crucilab-theme", light ? "light" : "dark");
-});
-if (localStorage.getItem("crucilab-theme") === "light") {
-  document.body.classList.add("light");
-  document.getElementById("themeBtn").textContent = "🌙";
-}
-
 loadPreset("trigonometria");
