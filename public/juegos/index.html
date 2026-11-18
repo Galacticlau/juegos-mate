@@ -4,104 +4,89 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f8f5ff">
-  <meta name="description" content="El cuaderno de ideas de ProfeClau: juegos, desafíos y recursos para aprender con curiosidad.">
-  <title>ProfeClau · Cuaderno de ideas</title>
+  <meta name="description" content="Juegos matemáticos y recursos para el aula de ProfeClau. Encuentra tu próximo desafío y aprende jugando.">
+  <title>ProfeClau · Juegos y recursos</title>
   <link rel="icon" type="image/png" href="/assets/profeclau-logo.png">
   <link rel="stylesheet" href="/assets/brand.css">
+  <link rel="stylesheet" href="/assets/catalog.css">
   <link rel="stylesheet" href="/assets/notebook.css">
+  <link rel="stylesheet" href="/assets/combined.css">
   <script src="/assets/design-preview.js" defer></script>
   <script src="/assets/brand.js" defer></script>
   <script src="/assets/catalog.js" defer></script>
-  <script src="/assets/notebook.js" defer></script>
 </head>
-<body class="pc-page pc-notebook">
+<body class="pc-page pc-notebook pc-combined">
   <a class="pc-skip" href="#contenido">Saltar al contenido</a>
   <header class="pc-header pc-wrap">
-    <a class="pc-brand" href="/opcion-2" aria-label="ProfeClau, inicio">
+    <a class="pc-brand" href="/" aria-label="ProfeClau, inicio">
       <span class="pc-logo-box"><img src="/assets/profeclau-logo.png" width="84" height="84" alt="Logo de ProfeClau"></span>
       <span class="pc-brand-copy"><strong>Profe<span>Clau</span></strong><small>MATEMÁTICA, CON OTRA MIRADA.</small></span>
     </a>
     <nav class="pc-nav" aria-label="Navegación principal">
-      <a href="/opcion-2#juegos">01 / Explorar</a>
+      <a href="/#juegos">01 / Explorar</a>
       <a class="pc-nav-tool" href="/tarjetas-nfc">02 / Mis logros</a>
       <button class="pc-theme" type="button" aria-label="Activar tema oscuro" title="Activar tema oscuro">☾</button>
     </nav>
   </header>
-  <main class="nb-main" id="contenido">
-    <section class="nb-hero pc-wrap" aria-labelledby="hero-title">
-      <div>
-        <p class="nb-issue">CUADERNO Nº ∞ &nbsp; / &nbsp; ABIERTO A LA CURIOSIDAD</p>
-        <h1 id="hero-title">¿Y si<br><em>jugamos?</em></h1>
-        <p class="nb-intro">Un lugar para hacer preguntas, probar estrategias y descubrir que una idea siempre puede llevarte a otra.</p>
-        <a class="nb-start" href="#juegos">Abrir el cuaderno <span aria-hidden="true">↓</span></a>
-        <span class="nb-handnote" aria-hidden="true">se vale equivocarse.</span>
+  <main class="pc-home-main" id="contenido">
+    <section class="pc-catalog-section pc-wrap" id="juegos" aria-labelledby="catalog-title">
+      <div class="pc-section-heading">
+        <h1 id="catalog-title">Juegos y recursos<span class="pc-title-spark" aria-hidden="true">✳</span></h1>
+        <p id="resource-count" role="status" aria-live="polite">3 juegos + 1 herramienta</p>
       </div>
-      <div class="nb-scrapbook">
-        <div class="nb-paper-behind" aria-hidden="true"></div>
-        <section class="nb-question-paper" aria-labelledby="mini-question">
-          <span class="nb-tape" aria-hidden="true"></span>
-          <span class="nb-question-label">UNA PREGUNTA EN EL MARGEN</span>
-          <h2 id="mini-question">¿Cuántas formas hay de ordenar estas tres letras?</h2>
-          <div class="nb-letter-line" aria-label="Orden actual de las letras"><span class="nb-letter">A</span><span class="nb-letter">B</span><span class="nb-letter">C</span></div>
-          <div class="nb-question-actions"><button class="nb-shuffle" type="button" id="shuffle-letters">Barajar ↻</button><button class="nb-reveal" type="button" id="reveal-arrangements" aria-expanded="false" aria-controls="arrangements-solution">Descubrir las posibilidades</button></div>
-          <p class="nb-mini-status" id="arrangement-status" role="status">Mismas letras. Otra forma de mirarlas.</p>
-          <p class="nb-solution" id="arrangements-solution" hidden><strong>3 × 2 × 1 = 6 órdenes diferentes.</strong><br>ABC · ACB · BAC · BCA · CAB · CBA</p>
-        </section>
-        <span class="nb-star-sticker" aria-hidden="true">3!</span>
-        <span class="nb-margin-symbol" aria-hidden="true">a + b</span>
-      </div>
-      <span class="nb-margin-pencil" aria-hidden="true">PENSAR TAMBIÉN ES JUGAR</span>
-    </section>
-    <div class="nb-strip pc-wrap" aria-label="Preguntar, probar, conectar y descubrir">
-      <span><b aria-hidden="true">?</b> Haz una pregunta</span><span><b aria-hidden="true">△</b> Prueba una idea</span><span><b aria-hidden="true">∞</b> Conecta lo aprendido</span><span><b aria-hidden="true">＋</b> Vuelve a intentar</span>
-    </div>
-    <section class="nb-collection pc-wrap" id="juegos" aria-labelledby="catalog-title">
-      <div class="nb-section-top">
-        <h2 id="catalog-title">Elige una página.<br><em>Empieza una aventura.</em></h2>
-        <label class="nb-search"><span aria-hidden="true">⌕</span><input type="search" id="resource-search" placeholder="¿Qué quieres explorar?" aria-label="Buscar juegos y recursos"></label>
-      </div>
-      <div class="nb-index-and-pages">
-        <aside class="nb-index" aria-label="Índice del cuaderno">
-          <p class="nb-index-label">ÍNDICE DEL CUADERNO</p>
-          <div class="pc-filters" role="group" aria-label="Filtrar recursos">
-            <button class="pc-filter" type="button" data-filter="all" aria-pressed="true">Todas las páginas <span>04</span></button>
-            <button class="pc-filter" type="button" data-filter="matematica" aria-pressed="false">Matemática <span>03</span></button>
-            <button class="pc-filter" type="button" data-filter="palabras" aria-pressed="false">Palabras <span>01</span></button>
-            <button class="pc-filter" type="button" data-filter="herramientas" aria-pressed="false">Herramientas <span>01</span></button>
-          </div>
-          <p class="nb-index-note" aria-hidden="true">Una buena idea<br>no siempre sale<br>a la primera.</p>
-        </aside>
-        <div>
-          <div class="nb-pages">
-            <article class="nb-resource nb-resource--orbit" data-resource data-categories="matematica" data-game="true">
-              <div class="nb-page-art" aria-hidden="true"><span class="nb-page-number">PÁGINA 01</span><span class="nb-omega">Ω</span></div>
-              <div class="nb-page-copy"><span class="nb-overline">POSIBILIDADES EN MOVIMIENTO</span><h3>Órbita muestral</h3><p>Atrapa los resultados posibles y construye espacios muestrales y eventos. Cada elección cuenta.</p><ul class="nb-tags" aria-label="Etiquetas"><li>Probabilidad</li><li>Espacio muestral</li><li>Eventos</li></ul></div>
-              <a class="nb-open" href="/juegos/orbita-muestral" aria-label="Jugar Órbita muestral">→</a>
-            </article>
-            <article class="nb-resource nb-resource--cofres" data-resource data-categories="matematica" data-game="true">
-              <div class="nb-page-art" aria-hidden="true"><span class="nb-page-number">PÁGINA 02</span><div class="nb-dice"><span></span><span></span><span></span><span></span></div></div>
-              <div class="nb-page-copy"><span class="nb-overline">EL ORDEN TIENE SUS SECRETOS</span><h3>Cofres del Orden</h3><p>Comparte estrategias con tu equipo y encuentra la clave de cada desafío de conteo.</p><ul class="nb-tags" aria-label="Etiquetas"><li>Técnicas de conteo</li><li>Competencia</li><li>Cuestionario</li></ul></div>
-              <a class="nb-open" href="/juegos/cofres-del-orden" aria-label="Jugar Cofres del Orden">→</a>
-            </article>
-            <article class="nb-resource nb-resource--cruci" data-resource data-categories="matematica palabras" data-game="true">
-              <div class="nb-page-art" aria-hidden="true"><span class="nb-page-number">PÁGINA 03</span><div class="nb-word"><span>A</span><span>B</span><span>C</span></div></div>
-              <div class="nb-page-copy"><span class="nb-overline">CUANDO LOS CONCEPTOS SE ENCUENTRAN</span><h3>CruciLab</h3><p>Conecta trigonometría, historia local y lenguaje, o escribe las pistas de tu propio crucigrama.</p><ul class="nb-tags" aria-label="Etiquetas"><li>Crucigrama</li><li>Trigonometría</li><li>Historia local</li><li>Lenguaje</li><li>Vocabulario</li><li>Creador de juegos</li></ul></div>
-              <a class="nb-open" href="/juegos/crucigrama/" aria-label="Jugar CruciLab">→</a>
-            </article>
-            <article class="nb-resource nb-resource--tool" data-resource data-categories="herramientas">
-              <div class="nb-page-art" aria-hidden="true"><span class="nb-page-number">PÁGINA 04</span><span class="nb-nfc">＋</span></div>
-              <div class="nb-page-copy"><span class="nb-overline">EL REGISTRO DE TUS PEQUEÑOS GRANDES PASOS</span><h3>Cada avance suma</h3><p>Consulta tus registros y puntajes con tu tarjeta NFC, o accede al panel docente para registrar tarjetas.</p><ul class="nb-tags" aria-label="Etiquetas"><li>Tarjetas NFC</li><li>Puntajes</li><li>Seguimiento</li></ul></div>
-              <a class="nb-open" href="/tarjetas-nfc" aria-label="Abrir mis registros">→</a>
-            </article>
-          </div>
-          <div class="nb-empty" id="resource-empty" hidden><p>Esa página todavía no está en este cuaderno. Prueba con otra palabra.</p><button type="button" id="clear-search">Ver todas las páginas</button></div>
-          <p class="nb-collection-count" id="resource-count" role="status" aria-live="polite">3 juegos + 1 herramienta</p>
-          <noscript><p class="nb-empty">Activa JavaScript para usar el índice, el buscador y los pequeños desafíos. Los enlaces a los recursos siguen disponibles.</p></noscript>
+      <div class="pc-catalog-toolbar">
+        <div class="pc-filters" role="group" aria-label="Filtrar recursos">
+          <button class="pc-filter" data-filter="all" aria-pressed="true" type="button">Todos</button>
+          <button class="pc-filter" data-filter="matematica" aria-pressed="false" type="button">Matemática</button>
+          <button class="pc-filter" data-filter="palabras" aria-pressed="false" type="button">Palabras</button>
+          <button class="pc-filter" data-filter="herramientas" aria-pressed="false" type="button">Herramientas</button>
+        </div>
+        <div class="pc-catalog-tools">
+          <label class="pc-search"><span aria-hidden="true">⌕</span><input type="search" id="resource-search" placeholder="Busca un juego o un tema…" aria-label="Buscar juegos y recursos"></label>
+          <button class="pc-random" type="button" id="surprise">Al azar <span aria-hidden="true">✦</span></button>
         </div>
       </div>
+      <div class="pc-resource-grid">
+        <article class="pc-resource" data-resource data-categories="matematica" data-game="true">
+          <div class="pc-card-art pc-art-orbit" aria-hidden="true"><span class="pc-orbit-title">Ω</span><span class="pc-orb-number pc-orb-number--one">2</span><span class="pc-orb-number pc-orb-number--two">6</span><span class="pc-orb-number pc-orb-number--three">4</span><span class="pc-art-note">¿Y si ocurre…?</span></div>
+          <div class="pc-card-copy">
+            <span class="pc-card-type">ATRAPA · PIENSA · DESCUBRE</span>
+            <h2>Órbita muestral</h2>
+            <p>Atrapa los resultados posibles y construye espacios muestrales y eventos. ¡Cuidado con los intrusos!</p>
+            <ul class="pc-tags" aria-label="Etiquetas"><li>Probabilidad</li><li>Espacio muestral</li><li>Eventos</li></ul>
+            <a class="pc-card-link" href="/juegos/orbita-muestral">Jugar Órbita muestral <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        <article class="pc-resource" data-resource data-categories="matematica" data-game="true">
+          <div class="pc-card-art pc-art-cofres" aria-hidden="true"><span class="pc-combination">n! / (n − r)!</span><div class="pc-chest"></div><span class="pc-cofres-star">✧</span><span class="pc-art-note">El orden importa… ¿o no?</span></div>
+          <div class="pc-card-copy">
+            <span class="pc-card-type">RAZONA · COMPARTE · DESBLOQUEA</span>
+            <h2>Cofres del Orden</h2>
+            <p>Resuelve desafíos de conteo en equipo. Elige tu estrategia y encuentra la clave para abrir los cofres.</p>
+            <ul class="pc-tags" aria-label="Etiquetas"><li>Técnicas de conteo</li><li>Competencia</li><li>Cuestionario</li></ul>
+            <a class="pc-card-link" href="/juegos/cofres-del-orden">Jugar Cofres del Orden <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        <article class="pc-resource" data-resource data-categories="matematica palabras" data-game="true">
+          <div class="pc-card-art pc-art-cruci" aria-hidden="true"><div class="pc-cross-preview"><span class="pc-cross-blank"></span><span class="pc-cross-blank"></span><span class="pc-cross-accent">S</span><span class="pc-cross-blank"></span><span class="pc-cross-blank"></span><span>J</span><span>U</span><span class="pc-cross-accent">E</span><span>G</span><span>O</span><span class="pc-cross-blank"></span><span class="pc-cross-blank"></span><span class="pc-cross-accent">N</span><span class="pc-cross-blank"></span><span class="pc-cross-blank"></span><span class="pc-cross-blank"></span><span class="pc-cross-blank"></span><span class="pc-cross-accent">O</span><span class="pc-cross-blank"></span><span class="pc-cross-blank"></span></div><span class="pc-cruci-doodle">✎</span><span class="pc-art-note">Pista: empieza con curiosidad.</span></div>
+          <div class="pc-card-copy">
+            <span class="pc-card-type">CONECTA · CRUZA · CREA</span>
+            <h2>CruciLab</h2>
+            <p>Cruza conceptos de trigonometría, historia local y lenguaje. Resuelve un ejemplo o crea tu propio crucigrama.</p>
+            <ul class="pc-tags" aria-label="Etiquetas"><li>Crucigrama</li><li>Trigonometría</li><li>Historia local</li><li>Lenguaje</li><li>Vocabulario</li><li>Creador de juegos</li></ul>
+            <a class="pc-card-link" href="/juegos/crucigrama/">Jugar CruciLab <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        <article class="pc-resource pc-resource--tool" data-resource data-categories="herramientas">
+          <div class="pc-nfc-art" aria-hidden="true"><div class="pc-nfc-card"><strong>ProfeClau</strong><span>))) &nbsp; MI TARJETA</span></div><span class="pc-nfc-badge">＋</span></div>
+          <div class="pc-tool-copy"><span class="pc-card-type">CADA AVANCE CUENTA</span><h2>Tu tarjeta, tus logros</h2><p>Consulta tus registros y puntajes con tu tarjeta NFC, o accede al panel docente para registrar tarjetas.</p><ul class="pc-tags" aria-label="Etiquetas"><li>Tarjetas NFC</li><li>Puntajes</li><li>Seguimiento</li></ul></div>
+          <a class="pc-button" href="/tarjetas-nfc">Abrir mis registros <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+      <div class="pc-empty" id="resource-empty" hidden><p>No encontramos recursos con esa combinación. Probemos con otra idea.</p><button id="clear-search" type="button">Ver todos los recursos</button></div>
+      <noscript><p class="pc-empty">Activa JavaScript para usar la búsqueda y los filtros. Puedes abrir todos los juegos con sus enlaces.</p></noscript>
     </section>
-    <div class="nb-endnote pc-wrap"><p>Las mejores ideas empiezan con un<br><em>«¿y si lo intento?».</em></p><button class="nb-surprise" type="button" id="surprise">Elige una página por mí ✳</button></div>
   </main>
-  <footer class="pc-footer pc-wrap"><span>PROFECLAU / UN CUADERNO CON MUCHAS POSIBILIDADES.</span><span>Hecho con curiosidad por Claudia Videla.</span></footer>
+  <footer class="pc-footer pc-wrap"><span><strong>ProfeClau</strong> · Ideas que suman, juegos que enseñan.</span><span>Claudia Videla · Matemática, con otra mirada.</span></footer>
 </body>
 </html>

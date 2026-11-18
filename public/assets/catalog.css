@@ -75,7 +75,7 @@
 .pc-art-cruci .pc-art-note { color: #34654e; }
 .pc-card-copy { display: flex; flex-direction: column; align-items: flex-start; flex: 1; padding: 19px 14px 15px; }
 .pc-card-type { color: var(--pc-purple); font-size: .61rem; text-transform: uppercase; font-weight: 800; letter-spacing: .11em; }
-.pc-card-copy h3 { font-size: 1.35rem; letter-spacing: -.04em; margin: 10px 0; }
+.pc-card-copy :is(h2,h3) { font-size: 1.35rem; letter-spacing: -.04em; margin: 10px 0; }
 .pc-card-copy p { color: var(--pc-muted); font-size: .84rem; line-height: 1.65; margin: 0 0 17px; }
 .pc-tags { display: flex; flex-wrap: wrap; gap: 5px; padding: 0; margin: 0 0 22px; list-style: none; }
 .pc-tags li { border: 1px solid var(--pc-line); background: var(--pc-bg); color: var(--pc-muted); border-radius: 7px; font-size: .59rem; padding: 5px 7px; line-height: 1.1; }
@@ -88,7 +88,7 @@
 .pc-nfc-card strong { font-size: .7rem; }
 .pc-nfc-card span { color: #ddc6ff; font-size: .59rem; }
 .pc-nfc-badge { position: absolute; right: 3px; bottom: 5px; display: grid; place-items: center; border: 2px solid #684b14; background: var(--pc-gold); color: #684b14; border-radius: 50%; width: 34px; height: 34px; font-size: 1.2rem; }
-.pc-tool-copy h3 { margin: 9px 0; font-size: 1.4rem; letter-spacing: -.04em; }
+.pc-tool-copy :is(h2,h3) { margin: 9px 0; font-size: 1.4rem; letter-spacing: -.04em; }
 .pc-tool-copy p { color: var(--pc-muted); font-size: .82rem; line-height: 1.6; margin: 0; max-width: 530px; }
 .pc-tool-copy .pc-tags { margin-top: 13px; margin-bottom: 0; }
 .pc-resource--tool .pc-button { min-height: 46px; font-size: .8rem; padding-inline: 18px; }
@@ -106,7 +106,7 @@
   .pc-formula-slip { font-size: 1rem; left: 18px; }
   .pc-resource-grid { gap: 16px; }
   .pc-card-copy { padding-inline: 9px; }
-  .pc-card-copy h3 { font-size: 1.2rem; }
+  .pc-card-copy :is(h2,h3) { font-size: 1.2rem; }
   .pc-orb-number--one { left: 18px; }
   .pc-orb-number--two { right: 16px; }
   .pc-resource--tool { grid-template-columns: 110px 1fr; padding: 20px; gap: 18px; }
@@ -137,7 +137,7 @@
   .pc-resource-grid { grid-template-columns: 1fr; gap: 22px; }
   .pc-card-art { height: 175px; }
   .pc-card-copy { padding-inline: 13px; }
-  .pc-card-copy h3 { font-size: 1.45rem; }
+  .pc-card-copy :is(h2,h3) { font-size: 1.45rem; }
   .pc-home-hero { padding-top: 30px; }
   .pc-eyebrow { font-size: .6rem; margin-bottom: 16px; }
   .pc-hero-actions { gap: 11px; }
